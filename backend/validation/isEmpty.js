@@ -1,6 +1,6 @@
 // is-empty.js
 
-const isEmpty = (value) => {      
+const isEmpty = (value) => {     
     return (
         value === undefined ||
         value === null ||

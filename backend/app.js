@@ -2,15 +2,17 @@ require('dotenv').config()
 const cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose')
+const logger = require('morgan')
 const userRoutes = require('./routes/user')
 const adminRoutes = require('./routes/admin')
 //express app
 const app = express()
 
+app.use(logger('dev'))
 app.use(cors())
 app.use(express.json()) 
 app.use(express.urlencoded({extended:true}))
- 
+  
 
 //route middleware
 app.use('/',userRoutes)

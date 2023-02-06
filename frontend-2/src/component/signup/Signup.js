@@ -33,7 +33,7 @@ const [form,setForm] =useState({
       conPassword: form.conPassword 
   }).then((response)=>{
       console.log(response.data);
-      navigate('/');
+      navigate('/login');
   }).catch((error)=>{
      const obj = error.response.data
      const arr = [...Object.values(obj)];

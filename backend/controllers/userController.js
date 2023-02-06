@@ -37,7 +37,6 @@ const jwt = require('jsonwebtoken')
 }
 
  const loginUser = (req,res) =>{
-      console.log('reached in login user');
     const { errors, isValid } = validateLoginInput(req.body);
 
     if(!isValid){
@@ -66,7 +65,6 @@ const jwt = require('jsonwebtoken')
                             }, (err, token) => {
                                 if(err) console.error('There is some error in token', err);
                                 else {
-                                    console.log('create jwt succssfully');
                                     res.json({
                                         success: true,
                                         name: user.name,

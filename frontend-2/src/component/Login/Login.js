@@ -33,7 +33,7 @@ const [errors,setErrors] =useState(null)
        axios.post(`http://localhost:4000/login`, {
         email: form.email,
         password: form.password
-      }).then((res)=>{ 
+      }).then((res)=>{  
         const data ={
           token:res.data.token,
           id:res.data.id
