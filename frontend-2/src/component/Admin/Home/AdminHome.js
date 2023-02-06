@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
 import axios from '../../../axios'
+import { actionCreators } from '../../../state'
 import './AdminHm.scss'
 function AdminHome() {
 
 const [users,setUsers] = useState([])
 const [ searchTerm , setSearchTerm] = useState('')
 const navigate = useNavigate()
+
+const dipatch = useDispatch()
+const {removeToken} = bindActionCreators(actionCreators,dipatch)
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -33,6 +39,15 @@ const navigate = useNavigate()
     )
   : users;
 
+  const handleLogout = ()=>{
+    const data={
+      token:"",
+      id:""
+    }
+    removeToken(data);
+    navigate('/admin')
+  }
+
 
 
 
@@ -40,7 +55,7 @@ const navigate = useNavigate()
     <div>
       <div className='headerr'>
         <h1>admin home page</h1>
-
+       
       </div>
 
       <div className="search-form">
@@ -53,7 +68,10 @@ const navigate = useNavigate()
      <i className="fas fa-search"></i> 
 </div>
 <button onClick={()=>navigate('/admin/adduser')} className="add-btn">Add</button>
-
+<button onClick={handleLogout} class="logout-button">
+  <i class="fas fa-sign-out-alt"></i>
+  Logout
+</button>
       <div className="container">
   <table>
     <tr>

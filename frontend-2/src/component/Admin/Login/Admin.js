@@ -41,14 +41,14 @@ const onChangeHandle = (e)=>{
 
   return (
     <div className='adBody'>
-       <div className='login'>
+       <div className='adminlogin'>
        {formError && (
         <div className="error-message">
           <p>{formError}</p>
         </div>
       )}
     <form onSubmit={handleSubmit}>
-    <div className='formBx'>
+    <div className='formBxxx'>
       <h2>Admin Login</h2>
       <div className='inputBx'>
        <p>Email</p>

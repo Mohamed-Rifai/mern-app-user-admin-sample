@@ -49,6 +49,26 @@
       }
 }
 
+.logout-button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
